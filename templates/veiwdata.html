@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL SENSOR DATA</title>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color:#ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: white;
+}
+#form
+{
+text-align: center;
+color : blue;
+}
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: blue;
+  opacity:0.9;
+  color:blue;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+
+</head>
+<body>
+<ul>
+<li><a href="{{url_for('back')}}">HOME PAGE</a></li>
+</ul>
+
+<table id="customers">
+  <tr>
+
+    <th>SENSOR ID</th>
+    <th>INSTALLATION DATE</th>
+    <th>LOCATION</th>
+    <th>ORIGINAL OIL COLOR</th>
+    <th>TRANSFORMER OIL COLOR</th>
+  </tr>
+    {% for i in rows %}
+  <tr>
+	<td>{{i[0]}}</td>
+	<td>{{i[2]}}</td>
+	<td>{{i[1]}}</td>
+	<td>{{i[3]}}</td>
+	<td>{{i[4]}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>

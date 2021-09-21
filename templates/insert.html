@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insert Page</title>
+     <style>
+body {
+  background-color: silver;
+}
+
+div.title {
+  background-color: blue;
+  color :silver;
+  padding: 0.5px;
+  text-align:center;
+
+}
+</style>
+
+    <style>
+        label,form{
+        color : blue;
+        text-align:center;
+
+        }
+    </style>
+
+
+</head>
+
+
+
+
+<body>
+<div class="title"><h1>INSERT DATA </h1></div>
+<br>
+<br>
+<br>
+
+
+<form action="/insertdatabase" method="POST">
+
+<input type="text" name="SENSOR_ID" size ="50" height="50" placeholder="enter Sensor Id" required><br><br>
+
+
+<input type="text" name="LOCATION"size="50" placeholder="enter location" required><br><br>
+
+
+<input type="text" name="INSTALLATION_DATE" size="50" placeholder="enter date"required><br><br>
+
+
+<input type="text" name="OIL_COLOR" size="50" placeholder="enter original oil color"required><br><br>
+
+
+<input type="text" name="TRANSFORMER_COLOR" size="50" placeholder="enter transformer color"required><br><br>
+
+
+<input type ="submit" value = "SAVE">
+
+</form>
+<ul>
+<li><a href="{{url_for('back')}}">HOME PAGE</a></li>
+</ul>
+</body>
+
+</html>

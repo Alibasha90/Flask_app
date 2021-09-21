@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insert Page</title>
+     <style>
+body {
+  background-color: silver;
+}
+
+div.title {
+  background-color: blue;
+  color :silver;
+  padding: 0.5px;
+  text-align:center;
+
+}
+</style>
+
+    <style>
+        label,form{
+        color : blue;
+        text-align:center;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+<div class="title"><h1>DELETE DATA </h1></div>
+<br>
+<br>
+<br>
+
+
+<form action="/deletedatabase" method="POST">
+
+
+    <label>SENSOR ID:</label>
+<input type="text" name="SENSOR_ID" size="50" placeholder="enter the sensor ID" required><br><br>
+
+    <label>LOCATION:</label>
+<input type="text" name="LOCATION"  size="50" placeholder="enter the Location" required><br><br>
+
+
+<input type ="submit" value = "DELETE">
+</form>
+
+
+<ul>
+<li><a href="{{url_for('back')}}">HOME PAGE</a></li>
+</ul>
+
+
+</body>
+</html>

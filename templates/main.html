@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ===================================== Title Attributes ========================= -->
+    <style>
+body {
+  background-color: silver;
+}
+
+div.title {
+  background-color: blue;
+  color :silver;
+  padding: 0.5px;
+  text-align:center;
+
+}
+</style>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: blue;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
+
+
+<!-- ==================== searchbar Attributes ======================================= -->
+    <style>
+        label,form{
+        color : blue;
+        text-align:center;
+
+        }
+    </style>
+
+    <!-- ============================= Table Attributes ================================= -->
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color:#ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: white;
+}
+#form
+{
+text-align: center;
+color : blue;
+}
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: blue;
+  opacity:0.9;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>
+
+
+
+
+</head>
+<!-- ============================================ Body ==================================================== -->
+
+<body>
+<div class="title"><h1>SENSOR DATA </h1></div>
+
+
+
+<!-- ======================================== SearchBars ================================================= -->
+<ul>
+  <li><a href="{{url_for('insertdatabase')}}">Insert Data</a></li>
+  <li><a href="{{url_for('deletedatabase')}}">Delete Data</a></li>
+  <li><a href="{{url_for('veiwdata')}}">All Data</a></li>
+<li><a href="{{url_for('graph')}}">Graphical Data view</a></li>
+</ul>
+<br>
+<br>
+
+<form action="/" method="GET">
+
+    <label>SENSOR ID:</label>
+<input type="text" name="SENSOR_ID" size="40" placeholder="enter the Sensor ID" required><br><br>
+
+    <label>LOCATION:</label>
+<input type="text" name="LOCATION" placeholder="enter the location" size="40" required><br><br>
+
+<input type ="submit" value = "Search">
+</form>
+
+<br><br><br>
+
+<table id="customers">
+  <tr>
+    <th>S.NO</th>
+    <th>SENSOR ID</th>
+    <th>INSTALLATION DATE</th>
+    <th>LOCATION</th>
+    <th>ORIGINAL OIL COLOR</th>
+    <th>TRANSFORMER OIL COLOR</th>
+  </tr>
+    {% for i in rows %}
+  <tr>
+
+	<td>{{1}}</td>
+	<td>{{i[0]}}</td>
+	<td>{{i[2]}}</td>
+	<td>{{i[1]}}</td>
+	<td>{{i[3]}}</td>
+	<td>{{i[4]}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
