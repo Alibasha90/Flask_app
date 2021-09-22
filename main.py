@@ -4,7 +4,7 @@ import plotly.express as px
 import pandas as pd
 
 app = Flask(__name__)
-# ============================================== Home page AND SEARCH PAGE==============================================
+# ============================================== Home page AND SEARCH PAGE==============================================git
 @app.route('/',methods=["GET","POST"])
 def search():
     if request.method == 'GET':
