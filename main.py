@@ -5,7 +5,6 @@ import pandas as pd
 
 app = Flask(__name__)
 # ============================================== Home page AND SEARCH PAGE==============================================
-
 @app.route('/',methods=["GET","POST"])
 def search():
     if request.method == 'GET':
